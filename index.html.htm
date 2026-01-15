@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Personaje AR</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body { margin: 0; background-color: #f0f0f0; }
+        model-viewer { width: 100vw; height: 100vh; } /* Ocupa toda la pantalla */
+        .boton-ar {
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            padding: 12px 24px; background: white; border: none; border-radius: 30px;
+            font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <model-viewer 
+        src="personaje.glb" 
+        alt="Personaje 3D" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1">
+        
+        <button slot="ar-button" class="boton-ar">
+            👋 Ver en Realidad Aumentada
+        </button>
+
+    </model-viewer>
+
+</body>
+</html>
